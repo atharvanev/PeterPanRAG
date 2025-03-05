@@ -79,13 +79,13 @@ def main():
 
 
     filename = "peterpan2.txt"
-    print("hello")
+    #print("hello")
     paragraphs = parse_file(filename)
     start = time.perf_counter()
     embeddings = get_embeddings(filename,'mistral',paragraphs)
     print(time.perf_counter()-start)
 
-    print(len(embeddings))
+    #print(len(embeddings))
 
     myprompt = input("what do you want to know?-->")#the prompt has to be an embedding to see which embedding from the paragaphs is closest in relation to our prompt
     prompt_embedding = ollama.embeddings(model='mistral',prompt=myprompt)["embedding"]
